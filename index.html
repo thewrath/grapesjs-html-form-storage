@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GrapesJS Plugin</title>
+  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/grapesjs"></script>
+  <script src="dist/grapesjs-html-form-storage.min.js"></script>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .cke_top {
+      background: #444 !important;
+    }
+
+    .cke_chrome {
+      border: none !important;
+    }
+
+    .cke_toolgroup {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input hidden id="storage" type="textarea" value="" />
+
+  <div id="gjs" style="height:0px; overflow:hidden">
+    <h1>Hello World Component!</h1>
+  </div>
+
+  <script type="text/javascript">
+    var editor = grapesjs.init({
+      height: '100%',
+      noticeOnUnload: 0,
+      storageManager: { type: 'html-form-storage' },
+      container: '#gjs',
+      fromElement: true,
+
+      plugins: ['grapesjs-html-form-storage'],
+      pluginsOpts: {
+        'grapesjs-html-form-storage': {
+          storageElementId: 'storage'
+        }
+      }
+    });
+
+    window.editor = editor;
+  </script>
+</body>
+</html>

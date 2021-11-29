@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-html-form-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "GrapesJS plugin to store editor content into HTML form input",
   "main": "dist/grapesjs-html-form-storage.min.js",
   "scripts": {

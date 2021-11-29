@@ -49,12 +49,13 @@ const masterPlugin = (editor, opt = {}) => {
      * @param  {Function} clbErr Callback function to call in case of errors
      */
     store(data, clb, clbErr) {
+      const storage = {};
+
       for (let key in data) {
         storage[key] = data[key];
       }
 
       storageElement.value = JSON.stringify(storage);
-
       // Might be called inside some async method
       clb();
     }

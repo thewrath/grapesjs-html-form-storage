@@ -7,8 +7,8 @@ const masterPlugin = (editor, opt = {}) => {
 
       const storageElement = document.getElementById(elementId);
 
-      if (!storageElement instanceof HTMLInputElement || storageElement.type !== 'text') {
-        throw new Error('Need textarea input as storage element.');
+      if (!(storageElement instanceof HTMLInputElement) || storageElement.type !== 'text') {
+        throw new Error('Need text input as storage element.');
       }
 
       return storageElement;
@@ -27,8 +27,8 @@ const masterPlugin = (editor, opt = {}) => {
     load(keys, clb, clbErr) {
       const result = {};
 
-      if (storage.value) {
-        const storage = JSON.parse(storage.value);
+      if (storageElement.value) {
+        const storage = JSON.parse(storageElement.value);
 
         keys.forEach(key => {
           const value = storage[key];
